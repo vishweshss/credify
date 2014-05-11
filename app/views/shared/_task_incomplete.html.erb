@@ -1,0 +1,19 @@
+
+<h1>Incomplete tasks</h1>
+
+
+<ul class="tasks">
+    <% @incompletetask.each do |task| %>
+    <% if task.id.in? @completed %>
+    <% else %>
+<li><h3>
+	
+	
+	<%= task.name %>
+	<%= task.value %></h3>
+	<%= link_to "task completed", task_done_path(id: task.id), class:"btn btn-success"%>
+</li>
+<% end %>
+<% end %>
+</ul>
+

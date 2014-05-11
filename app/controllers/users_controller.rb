@@ -4,10 +4,16 @@ class UsersController < ApplicationController
    before_action :admin_user,     only: :destroy
  def show
     @user = User.find(params[:id])
-  end
+    @completetask = @user.tasks
+    @incompletetask = Task.all
+    @completed = @user.task_ids
+    
+      end
  def create
     @user = User.new(user_params)    # Not the final implementation!
     if @user.save
+      sign_in @user
+      flash[:success] = "Welcome to Credify!"
       redirect_to @user
     else
       render 'new'
@@ -21,6 +27,7 @@ class UsersController < ApplicationController
      @users = User.paginate(page: params[:page])
   end
   def edit
+     @user = User.find(params[:id])
   end
 
   def update

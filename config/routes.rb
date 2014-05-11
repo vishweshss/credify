@@ -1,4 +1,6 @@
 Credify::Application.routes.draw do
+
+  resources :tasks
   resources :users
  resources :sessions, only: [:new, :create, :destroy]
     root  'static_pages#home'
@@ -9,4 +11,6 @@ Credify::Application.routes.draw do
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
-end
+  match '/task_done', to: 'tasks#assoc', via: 'get'
+  match '/task_undone', to: 'tasks#disassoc', via: 'get'
+  end

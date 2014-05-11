@@ -1,0 +1,15 @@
+
+<h1>Completed tasks</h1>
+
+
+<ul class="tasks">
+    <% @completetask.each do |task| %>
+<li><h3><%= task.name%>
+	<%= task.value%></h3><% @credit = @credit + task.value %>
+<%= link_to "task incomplete", task_undone_path(id: task.id), class:"btn btn-danger"%>
+</li>
+
+<% end %>
+</ul>
+
+

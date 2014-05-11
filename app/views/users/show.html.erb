@@ -5,7 +5,18 @@
 <h1>
 	 <%= gravatar_for @user %>
 	<%= @user.name %></h1>
-<%= @user.name %>, <%= @user.email %>
+<h3> <%= @user.email %></h3>
+<% @credit = 0 %>
  </section>
   </aside>
+  </div>
+  <div class="row">
+  <div class="span6">
+  	<%=render 'shared/task_completed' %>
+  	</div>
+  	<div class="span6">
+  		<%=render 'shared/task_incomplete'%>
+  	</div>
+	
+</div> <h2>Total Credits <%= @credit%></h2> 	
 </div>
