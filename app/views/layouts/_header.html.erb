@@ -17,6 +17,7 @@
                 <li><%= link_to "Profile", current_user %></li>
                 <li><%= link_to "Edit profile", edit_user_path(current_user) %></li>
                 <li><%= link_to "Add task", new_task_path %></li>
+                <li><%= link_to "Redeem", redeem_path %>
                 <li class="divider"></li>
                 <li>
                   <%= link_to "Sign out", signout_path, method: "delete" %>

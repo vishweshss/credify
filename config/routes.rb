@@ -13,4 +13,5 @@ Credify::Application.routes.draw do
   match '/signout', to: 'sessions#destroy',     via: 'delete'
   match '/task_done', to: 'tasks#assoc', via: 'get'
   match '/task_undone', to: 'tasks#disassoc', via: 'get'
+  match '/redeem', to: 'static_pages#redeem', via: 'get'
   end
